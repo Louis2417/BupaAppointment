@@ -82,7 +82,7 @@ def query_newest_slot(cities=['Parramatta', 'Sydney', 'Bankstown '], postcode='2
                     continue
                 date = parse_date_to_yyyymmdd(date)
                 print(f"{c}: {date}")
-                if compare_dates(date, "2024-08-20 11:30AM"):
+                if compare_dates(date, "2024-08-07 10:15AM"):
                     result.append(f"{c}: {date}")
             else:
                 print(f"{c} not found.")
@@ -126,7 +126,7 @@ if __name__ == '__main__':
             print(result)
             for i in result:
                 send_ios_notification(f'New slot available/{i.replace("/", "-")}')
-            time.sleep(120)
+            time.sleep(60)
         except:
             traceback.print_exc()
             time.sleep(300)
